@@ -110,4 +110,3 @@ extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
         //print("dropped frame")
     }
 }
-

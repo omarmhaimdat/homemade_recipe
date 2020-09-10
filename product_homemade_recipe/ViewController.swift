@@ -11,6 +11,10 @@ import Vision
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
+    private var sumTimeInference = 0.0
+    private var numberTimeInference = 0.0
+    var timer = Timer()
+    
     private let cellId = "cellId"
     
     let tableView: UITableView = {
@@ -69,6 +73,15 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         setupCameraView()
         setUpCamera()
         setupBoundingBoxView()
+        scheduledTimerWithTimeInterval()
+    }
+    
+    func scheduledTimerWithTimeInterval(){
+        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateCounting(){
+        print("Average = \((self.sumTimeInference/self.numberTimeInference)*1000 ) ms")
     }
     
     override func didReceiveMemoryWarning() {
@@ -101,7 +114,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         videoCapture.delegate = self
         videoCapture.fps = 30
         videoCapture.setUp(sessionPreset: .high) { success in
-            
+        
             if success {
                 // add preview view on the layer
                 if let previewLayer = self.videoCapture.previewLayer {
@@ -154,8 +167,12 @@ extension ViewController: VideoCaptureDelegate {
             let image = FritzVisionImage(imageBuffer: pixelBuffer)
             let options = FritzVisionObjectModelOptions()
             options.threshold = 0.9
-            
+            let timer = Debug.Timer()
             guard let results = try? visionModel.predict(image, options: options) else { return }
+            let endTimer = timer.end()
+            self.sumTimeInference += endTimer
+            self.numberTimeInference += 1
+            
             DispatchQueue.main.async {
                 if results.count > 0 {
                     var result = [FritzVisionObject]()
@@ -163,10 +180,10 @@ extension ViewController: VideoCaptureDelegate {
                     self.BoundingBoxView.predictedObjects = result
                     if let product = self.products.first(where: {$0.id == result[0].label}) {
                         if self.myProducts.contains(where: {$0.id == product.id}) {
-                            print("in the array")
+//                            print("\(product.id) already in the array")
                         } else {
                             self.myProducts.append(product)
-                            print("reloaded")
+//                            print("reloaded")
                             self.tableView.reloadData()
                         }
                     }
@@ -202,3 +219,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
+
+
+struct Debug {
+  struct Timer {
+    let start = DispatchTime.now().uptimeNanoseconds
+    func end() -> Double {
+      let end = DispatchTime.now().uptimeNanoseconds
+      let diff = Double(end-start) / 1_000_000_000
+      return diff
+    }
+  }
+}
