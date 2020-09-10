@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-product_homemade_recipe/Pods-product_homemade_recipe-frameworks.sh
+${PODS_ROOT}/FritzBase/Frameworks/FritzCore.framework
+${PODS_ROOT}/FritzBase/Frameworks/Fritz.framework
+${PODS_ROOT}/FritzBase/Frameworks/CoreMLHelpers.framework
+${PODS_ROOT}/FritzBase/Frameworks/FritzManagedModel.framework
+${PODS_ROOT}/FritzBase/Frameworks/FritzVision.framework

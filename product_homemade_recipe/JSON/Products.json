@@ -1,0 +1,82 @@
+[
+    {
+        "id": "nutella",
+        "name": "Nutella",
+        "list": [
+            {
+                "quantity": 60.0,
+                "product": "hazelnuts roasted (preferably without skin)"
+            },{
+                "quantity": 45,
+                "product": "grams of brown sugar"
+            },{
+                "quantity": 1,
+                "product": "pinch salt"
+            },{
+                "quantity": 100,
+                "product": "grams of dark chocolate"
+            },{
+                "quantity": 90,
+                "product": "grams of milk"
+            },{
+                "quantity": 70,
+                "product": "grams of butter"
+            }
+        ]
+    },
+    {
+        "id": "mayonnaise_hellmann",
+        "name": "Hellman's Mayonnaise",
+        "list": [
+            {
+                "quantity": 1.0,
+                "product": "egg"
+            }, {
+                "quantity": 1.0,
+                "product": "teaspoon dry mustard"
+            }, {
+                "quantity": 0.25,
+                "product": "cup oil"
+            }, {
+                "quantity": 1.0,
+                "product": "dash cayenne pepper"
+            }, {
+                "quantity": 3.0,
+                "product": "tablespoons lemon juice or vinegar"
+            }
+        ]
+    },
+    {
+        "id": "mac_cheese",
+        "name": "Mac & cheese",
+        "list": [
+            {
+                "quantity": 227,
+                "product": "grams of elbow macaroni uncooked"
+            },{
+                "quantity": 2.0,
+                "product": "TBS butter"
+            },{
+                "quantity": 2.0,
+                "product": "TBS all-purpose flour"
+            },{
+                "quantity": 0.5,
+                "product": "tsp sea salt"
+            },{
+                "quantity": 0.25,
+                "product": "tsp garlic powder"
+            },{
+                "quantity": 237.0,
+                "product": "ml whole milk"
+            },{
+                "quantity": 58.0,
+                "product": "grams sour cream or Greek yogurt"
+            },{
+                "quantity": 200.0,
+                "product": "grams shredded cheddar cheese"
+            }
+        ]
+    }
+]
+
+
