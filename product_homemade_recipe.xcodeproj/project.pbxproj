@@ -25,6 +25,19 @@
 		AD6EE2ABD9B031F1D566BB94 /* Pods_product_homemade_recipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0049B709022E6421068B7E /* Pods_product_homemade_recipe.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6C55A8E8250A3C9F007B5187 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0C22815E4E8A25385E7907FD /* Pods-product_homemade_recipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-product_homemade_recipe.release.xcconfig"; path = "Target Support Files/Pods-product_homemade_recipe/Pods-product_homemade_recipe.release.xcconfig"; sourceTree = "<group>"; };
 		6C55A8C32508DAD1007B5187 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -146,6 +159,7 @@
 				6C60004424FA579700D16F98 /* Frameworks */,
 				6C60004524FA579700D16F98 /* Resources */,
 				24356CD6FBF109D3229399DC /* [CP] Embed Pods Frameworks */,
+				6C55A8E8250A3C9F007B5187 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
